@@ -271,7 +271,7 @@ seed_examples:
           When you migrate multiple repositories from GitHub Enterprise Server 3.7 or earlier, you need to set additional environment variables to authenticate
           to your blob storage.
 document:
-  repo: 'https://github.com/taylorjordanNC/'
-  commit:
+  repo: 'https://github.com/taylorjordanNC/demo_taxonomy.git'
+  commit: ff0814278549fe821d3950028e35a062c1e08c8a
   patterns:
-    - 'data_preparation/'
+    - 'github_migration.md'
