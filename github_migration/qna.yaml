@@ -12,19 +12,19 @@ seed_examples:
       GitHub API. Unfortunately, GitHub doesn’t provide a bulk migration tool for this, so each piece
       of data must be migrated manually via the API.
       **Example: Migrating Issues**
-      1\. First, download a list of all the issues from your GitHub Enterprise Server repository:
-      2\. curl \-X GET \-u "\<YOUR\_USERNAME\>:\<YOUR\_ACCESS\_TOKEN\>" \-H "Accept:
+      1. First, download a list of all the issues from your GitHub Enterprise Server repository:
+      2. ```curl -X GET -u "<YOUR_USERNAME>:<YOUR_ACCESS_TOKEN>" -H "Accept:
       application/vnd.github.v3+json"
-      https://\<YOUR\_ENTERPRISE\_SERVER\_URL\>/api/v3/repos/\<ORG\_NAME\>/\<REPO\_NAME
-      \>/issues \--output \~/issues.json
+      https://<YOUR_ENTERPRISE_SERVER_URL>/api/v3/repos/<ORG_NAME>/<REPO_NAME
+      >/issues --output ~/issues.json```
       This will generate a file called issues.json that contains the list of issues from your repository.
-      3\. You can then create a new issue in your GitHub Enterprise Cloud repository using the
+      3. You can then create a new issue in your GitHub Enterprise Cloud repository using the
       following curl command:
-      4\. curl \-X POST \-u "\<YOUR\_USERNAME\>:\<YOUR\_ACCESS\_TOKEN\>" \-H "Accept:
-      application/vnd.github.v3+json" \-d '{"body":"Its just a test
+      4.  ```curl -X POST -u "<YOUR_USERNAME>:<YOUR_ACCESS_TOKEN>" -H "Accept:
+      application/vnd.github.v3+json" -d '{"body":"Its just a test
       though.","title": "This is a new issue"}'
-      https://api.github.com/repos/\<ORG\_NAME\>/\<REPO\_NAME\>/issues
-      5\. Repeat this process for all issues in your issues.json file. This method is a bit tedious,
+      https://api.github.com/repos/<ORG_NAME>/<REPO_NAME>/issues```
+      5. Repeat this process for all issues in your issues.json file. This method is a bit tedious,
       as you’ll need to loop through all issues and recreate them manually.
     questions_and_answers:
       - question: |
@@ -36,12 +36,12 @@ seed_examples:
           How can I download a list of all issues from my GitHub Enterprise Server repository?
         answer: |
           You can use the following curl command to download a list of issues as a json file:
-          curl -X GET -u "<YOUR_USERNAME>:<YOUR_ACCESS_TOKEN>" -H "Accept: application/vnd.github.v3+json" https://<YOUR_ENTERPRISE_SERVER_URL>/api/v3/repos/<ORG_NAME>/<REPO_NAME>/issues --output ~/issues.json
+          ```curl -X GET -u "<YOUR_USERNAME>:<YOUR_ACCESS_TOKEN>" -H "Accept: application/vnd.github.v3+json" https://<YOUR_ENTERPRISE_SERVER_URL>/api/v3/repos/<ORG_NAME>/<REPO_NAME>/issues --output ~/issues.json```
       - question: |
           How can I create a new issue in my GitHub Enterprise Cloud repository?
         answer: |
           You can create a new issue in your GitHub Enterprise Cloud repository using the following curl command:
-          curl -X POST -u "<YOUR_USERNAME>:<YOUR_ACCESS_TOKEN>" -H "Accept: application/vnd.github.v3+json" -d '{"body":"Its just a test though.','title": "This is a new issue"}' https://api.github.com/repos/<ORG_NAME>/<REPO_NAME>/issues
+          ```curl -X POST -u "<YOUR_USERNAME>:<YOUR_ACCESS_TOKEN>" -H "Accept: application/vnd.github.v3+json" -d '{"body":"Its just a test though.','title": "This is a new issue"}' https://api.github.com/repos/<ORG_NAME>/<REPO_NAME>/issues```
   - context: |
       #### Configuring blob storage in the Management Console of your GitHub Enterprise Server instance
       After you set up an AWS S3 storage bucket or Azure Blob Storage storage account, configure blob storage in the Management Console
@@ -162,17 +162,17 @@ seed_examples:
       If you're using GitHub Enterprise Server 3.8 or later, use the following flags:
       | Shell |
       | :---- |
-      | gh gei migrate-repo \--github-source-org SOURCE \--source-repo CURRENT-NAME \--github-target-org DESTINATION \--target-repo NEW-NAME \--ghes-api-url GHES-API-URL |
+      | ```gh gei migrate-repo --github-source-org SOURCE --source-repo CURRENT-NAME --github-target-org DESTINATION --target-repo NEW-NAME --ghes-api-url GHES-API-URL``` |
 
       If you're migrating from GitHub Enterprise Server 3.7 or earlier and using Azure Blob Storage as your blob storage provider, use the following flags to authenticate:
       | Shell |
       | :---- |
-      | gh gei migrate-repo \--github-source-org SOURCE \--source-repo CURRENT-NAME \--github-target-org DESTINATION \--target-repo NEW-NAME \\     \--ghes-api-url GHES-API-URL \--azure-storage-connection-string "AZURE\_STORAGE\_CONNECTION\_STRING" |
+      | ```gh gei migrate-repo --github-source-org SOURCE --source-repo CURRENT-NAME --github-target-org DESTINATION --target-repo NEW-NAME \--ghes-api-url GHES-API-URL --azure-storage-connection-string "AZURE_STORAGE_CONNECTION_STRING" ```|
 
       If you're migrating from GitHub Enterprise Server 3.7 or earlier and using Amazon S3 as your blob storage provider, use the following flags to authenticate:
       | Shell |
       | :---- |
-      | gh gei migrate-repo \--github-source-org SOURCE \--source-repo CURRENT-NAME \--github-target-org DESTINATION \--target-repo NEW-NAME \\     \--ghes-api-url GHES-API-URL \--aws-bucket-name "AWS-BUCKET-NAME" |
+      | ```gh gei migrate-repo --github-source-org SOURCE --source-repo CURRENT-NAME --github-target-org DESTINATION --target-repo NEW-NAME \--ghes-api-url GHES-API-URL --aws-bucket-name "AWS-BUCKET-NAME" ```|
     questions_and_answers:
       - question: |
           What command do I use to migrate a single repository?
@@ -182,13 +182,13 @@ seed_examples:
       - question: |
           What flags do I need to use to migrate a single repository from GitHub Enterprise Server 3.8?
         answer: |
-          The flags you need to use to migrate a single repository from GitHub Enterprise Server 3.8 are: --github-source-org SOURCE \
-          --source-repo CURRENT-NAME \--github-target-org DESTINATION \--target-repo NEW-NAME \--ghes-api-url GHES-API-URL.
+          The flags you need to use to migrate a single repository from GitHub Enterprise Server 3.8 are: ```--github-source-org SOURCE \
+          --source-repo CURRENT-NAME \--github-target-org DESTINATION \--target-repo NEW-NAME \--ghes-api-url GHES-API-URL ```.
       - question: |
           What flags do I need to use to migrate a single repository from GitHub Enterprise Server 3.7 or earlier when using Amazon S3 as the blob storage provider?
         answer: |
-          The flags you need to use to migrate a single repository from GitHub Enterprise Server 3.7 or earlier when using Amazon S3 as the blob storage provider are: --github-source-org SOURCE
-          --source-repo CURRENT-NAME --github-target-org DESTINATION \--target-repo NEW-NAME \--ghes-api-url GHES-API-URL \--aws-bucket-name "AWS-BUCKET-NAME".
+          The flags you need to use to migrate a single repository from GitHub Enterprise Server 3.7 or earlier when using Amazon S3 as the blob storage provider are: ``` --github-source-org SOURCE
+          --source-repo CURRENT-NAME --github-target-org DESTINATION \--target-repo NEW-NAME \--ghes-api-url GHES-API-URL \--aws-bucket-name "AWS-BUCKET-NAME" ```.
   - context: |
       #### Migrate multiple repositories
       If you're migrating from GitHub Enterprise Server 3.7 or earlier, before you run your script, you must set additional environment variables to authenticate to your blob storage provider.
