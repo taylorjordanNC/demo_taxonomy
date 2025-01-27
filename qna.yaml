@@ -1,0 +1,277 @@
+---
+version: 3
+domain: GitHub
+created_by: taylorjordanNC
+document_outline: |
+    GitHub Docunentation about Migration from GitHub Enterprise Server
+    to GitHub Enterprise Cloud
+seed_examples:
+  - context: |
+      **Step 2: Use GitHub’s API to Migrate Other Data**
+      To migrate additional data like issues, pull requests, and project metadata, you’ll need to use the
+      GitHub API. Unfortunately, GitHub doesn’t provide a bulk migration tool for this, so each piece
+      of data must be migrated manually via the API.
+      **Example: Migrating Issues**
+      1\. First, download a list of all the issues from your GitHub Enterprise Server repository:
+      2\. curl \-X GET \-u "\<YOUR\_USERNAME\>:\<YOUR\_ACCESS\_TOKEN\>" \-H "Accept:
+      application/vnd.github.v3+json"
+      https://\<YOUR\_ENTERPRISE\_SERVER\_URL\>/api/v3/repos/\<ORG\_NAME\>/\<REPO\_NAME
+      \>/issues \--output \~/issues.json
+      This will generate a file called issues.json that contains the list of issues from your repository.
+      3\. You can then create a new issue in your GitHub Enterprise Cloud repository using the
+      following curl command:
+      4\. curl \-X POST \-u "\<YOUR\_USERNAME\>:\<YOUR\_ACCESS\_TOKEN\>" \-H "Accept:
+      application/vnd.github.v3+json" \-d '{"body":"Its just a test
+      though.","title": "This is a new issue"}'
+      https://api.github.com/repos/\<ORG\_NAME\>/\<REPO\_NAME\>/issues
+      5\. Repeat this process for all issues in your issues.json file. This method is a bit tedious,
+      as you’ll need to loop through all issues and recreate them manually.
+    questions_and_answers:
+      - question: |
+          What is required to migrate pull requests and issues?
+        answer: |
+          To migrate issues and pull requests, you must use the GitHub API because GitHub does not provide
+          a bulk migration tool for this purpose. Each piece of data must be manually migrated via API commands.
+      - question: |
+          How can I download a list of all issues from my GitHub Enterprise Server repository?
+        answer: |
+          You can use the following curl command to download a list of issues as a json file:
+          curl -X GET -u "<YOUR_USERNAME>:<YOUR_ACCESS_TOKEN>" -H "Accept: application/vnd.github.v3+json" https://<YOUR_ENTERPRISE_SERVER_URL>/api/v3/repos/<ORG_NAME>/<REPO_NAME>/issues --output ~/issues.json
+      - question: |
+          How can I create a new issue in my GitHub Enterprise Cloud repository?
+        answer: |
+          You can create a new issue in your GitHub Enterprise Cloud repository using the following curl command:
+          curl -X POST -u "<YOUR_USERNAME>:<YOUR_ACCESS_TOKEN>" -H "Accept: application/vnd.github.v3+json" -d '{"body":"Its just a test though.','title": "This is a new issue"}' https://api.github.com/repos/<ORG_NAME>/<REPO_NAME>/issues
+  - context: |
+      #### Configuring blob storage in the Management Console of your GitHub Enterprise Server instance
+      After you set up an AWS S3 storage bucket or Azure Blob Storage storage account, configure blob storage in the Management Console
+      of your GitHub Enterprise Server instance. For more information about the Management Console, see Administering your instance from the Management Console.
+      1. From an administrative account on GitHub Enterprise Server, in the upper-right corner of any page, click.
+      2. If you're not already on the "Site admin" page, in the upper-left corner, click Site admin.
+      3. In the "Site admin" sidebar, click Management Console.
+      4. Log into the Management Console.
+      5. In the top navigation bar, click Settings.
+      6. Under Migrations, click Enable GitHub Migrations.
+      7. Optionally, to import storage settings you configured for GitHub Actions, select Copy Storage settings from Actions.
+      For more information see, Enabling GitHub Actions with Azure Blob storage and Enabling GitHub Actions with Amazon S3 storage.
+      Note
+      After copying your storage settings, you may still need to update the configuration of your cloud storage account
+      to work with GitHub Enterprise Importer. In particular, you must ensure that GitHub's IP addresses are allowlisted.
+      For more information, see Managing access for a migration between GitHub products.
+      8. If you do not import storage settings from GitHub Actions, select either Azure Blob Storage or Amazon S3 and fill in the required details.
+      Note
+      If you use Amazon S3, you must set the "AWS Service URL" to the standard endpoint for the AWS region where your bucket is located.
+      For example, if your bucket is located in the eu-west-1 region, the "AWS Service URL" would be https://s3.eu-west-1.amazonaws.com.
+      Your GitHub Enterprise Server instance's network must allow access to this host. Gateway endpoints are not supported,
+      such as bucket.vpce-0e25b8cdd720f900e-argc85vg.s3.eu-west-1.vpce.amazonaws.com. For more information about gateway endpoints,
+      see Gateway endpoints for Amazon S3 in the AWS documentation.
+      9. Click Test storage settings.
+      10. Click Save settings.
+    questions_and_answers:
+      - question: |
+          What specific configuration is required for Amazon S3 when setting up blob storage?
+        answer: |
+          For Amazon S3, the "AWS Service URL" must be set to the standard endpoint for the AWS region
+          where the bucket is located (e.g., https://s3.eu-west-1.amazonaws.com for the eu-west-1 region).
+          Additionally, the GitHub Enterprise Server instance's network must allow access to this host.
+          Gateway endpoints, such as bucket.vpce-<id>.s3.eu-west-1.vpce.amazonaws.com, are not supported.
+      - question: |
+          Where do I find the option to enable GitHub migrations in the Management Console?
+        answer: |
+          After logging into the Management Console, navigate to the "Settings" section in the top navigation bar.
+          Under the "Migrations" section, you will find the option to enable GitHub migrations.
+      - question: |
+          What is the final step of configuring blob storage in the management console of the github enterprise server instance?
+        answer: |
+          The final step of configuring blob storage in the management console of the github enterprise server instance is to save settings.
+  - context: |
+      | Query variable | Description |
+      | :---- | :---- |
+      | sourceId | Your migration source id returned from the createMigrationSource mutation. |
+      | ownerId | The organization ID of your organization on GitHub Enterprise Cloud. |
+      | repositoryName | A custom unique repository name not currently used by any of your repositories owned by the organizationon GitHub Enterprise Cloud. An error-logging issue will be created in this repository when your migration is complete or has stopped. |
+      | continueOnError | Migration setting that allows the migration to continue when encountering errors that don't cause the migration to fail. Must be true or false. We highly recommend setting continueOnError to true so that your migration will continue unless the Importer can't move Git source or the Importer has lost connection and cannot reconnect to complete the migration. |
+      | githubPat | The personal access token for your destination organization on GitHub Enterprise Cloud. |
+      | accessToken | The personal access token for your source. |
+      | targetRepoVisibility | The visibility of the new repository. Must be private, public, or internal. If not set, your repository is migrated as private. |
+      | gitArchiveUrl | A GitHub Enterprise Cloud-accessible URL for your Git source archive. |
+      | metadataArchiveUrl | A GitHub Enterprise Cloud-accessible URL for your metadata archive. |
+      | sourceRepositoryUrl | The URL for your repository on your GitHub Enterprise Server instance. This is required, but GitHub Enterprise Cloud will not communicate directly with your GitHub Enterprise Server instance. |
+      For personal access token requirements, see Managing access for a migration between GitHub products.
+      In the next step, you'll use the migration ID returned from the startRepositoryMigration mutation to check the migration status.
+    questions_and_answers:
+      - question: |
+          What is the purpose of the sourceId variable in a repository migration?
+        answer: |
+          The sourceId variable represents the migration source ID, which is returned from the createMigrationSource mutation.
+      - question: |
+          How is the repositoryName variable used during a migration?
+        answer: |
+          The repositoryName is a custom, unique name for the new repository being created in GitHub Enterprise Cloud.
+          It must not already exist in the organization, and an error-logging issue will be created in this repository when the migration completes or stops.
+      - question: |
+          What happens if I do not set the visibility of the new repository during a migration?
+        answer: |
+          If you do not set the visibility of the new repository during a migration, via the targetRepoVisibility variable, your repository is migrated as private.
+  - context: |
+      **Migrating from GitHub Enterprise Server to**
+      **GitHub Enterprise Cloud**
+      GitHub Enterprise Server is the on-premises Git repository hosting offering from GitHub. Large
+      organizations commonly run GitHub Enterprise Server for improved control and security over
+      their code repositories. With Enterprise Server, you can limit access to a private network, set
+      rules for creating and accessing repositories, use SAML for single sign-on across your
+      organization, and get access to premium GitHub support. You can also migrate to different
+      hardware as your team and repositories grow, making GitHub Enterprise Server a powerful tool
+      for teams with specific compliance and infrastructure requirements.
+      GitHub also offers an Enterprise Cloud option that gives you dedicated enterprise resources but
+      runs on GitHub’s hardware. With a 99.95% uptime SLA and access to GitHub’s built-in security
+      features, Enterprise Cloud is an appealing offering for organizations looking to reduce the
+      overhead of maintaining their own infrastructure. It allows you to restrict user access based on a
+      user’s network and add SAML sign-on, while also removing the need for your team to manage
+      potentially expensive infrastructure.
+      For many organizations, starting with GitHub Teams or GitHub Enterprise Cloud makes sense. If
+      you eventually need more control over your servers, it's relatively straightforward to migrate data
+      using GitHub’s API. However, migrating from GitHub Enterprise Server to GitHub Enterprise
+      Cloud can prove to be significantly more challenging, as detailed below.
+    questions_and_answers:
+      - question: |
+          What are the benefits of GitHub Enterprise Cloud compared to GitHub Enterprise Server?
+        answer: |
+          The benefits of GitHub Enterprise Cloud include providing dedicated enterprise resources on GitHub's infrastructure
+          and offering a 99.95% uptime SLA and built-in security features. GitHub Enterprise Cloud is appealing to companies who want
+          to reduce the overhead of maintaining infrastructure themselves. GitHub Enterprise Server, however, allows much greater control
+          over networking, repository creation and access control, and is overall a good option for companies who need greater control over their servers.
+      - question: |
+          When I want to start using GitHub Enterprise Server, will it be challenging to migrate my data?
+        answer: |
+          When you need greater control over your servers and are ready to move to GitHub Enterprise Server,
+          it's fairly simple to migrate your data with the use of GitHub's API. However, migrating from GitHub
+          Enterprise Server to GitHub Enterprise Cloud is more challenging.
+      - question: |
+          What product is the best choice if I do want to maintain my own infrastructure: GitHub Enterprise Cloud or GitHub Enterprise Server?
+        answer: |
+          If you cannot or do not want to maintain your own infrastructure and everything that comes along with that, then GitHub Enterprise Cloud
+          is the best choice for you. GitHub Enterprise Cloud provides you dedicated enterprise resources on GitHub hardware, with
+          a 99.95% uptime SLA and built-in security features.
+  - context: |
+      #### Migrate a single repository
+
+      You must follow this step from a computer that can access the API for your GitHub Enterprise Server instance.
+      If you can access your instance from the browser, then the computer has the correct access.
+      To migrate a single repository, use the gh gei migrate-repo command.
+      If you're using GitHub Enterprise Server 3.8 or later, use the following flags:
+      | Shell |
+      | :---- |
+      | gh gei migrate-repo \--github-source-org SOURCE \--source-repo CURRENT-NAME \--github-target-org DESTINATION \--target-repo NEW-NAME \--ghes-api-url GHES-API-URL |
+
+      If you're migrating from GitHub Enterprise Server 3.7 or earlier and using Azure Blob Storage as your blob storage provider, use the following flags to authenticate:
+      | Shell |
+      | :---- |
+      | gh gei migrate-repo \--github-source-org SOURCE \--source-repo CURRENT-NAME \--github-target-org DESTINATION \--target-repo NEW-NAME \\     \--ghes-api-url GHES-API-URL \--azure-storage-connection-string "AZURE\_STORAGE\_CONNECTION\_STRING" |
+
+      If you're migrating from GitHub Enterprise Server 3.7 or earlier and using Amazon S3 as your blob storage provider, use the following flags to authenticate:
+      | Shell |
+      | :---- |
+      | gh gei migrate-repo \--github-source-org SOURCE \--source-repo CURRENT-NAME \--github-target-org DESTINATION \--target-repo NEW-NAME \\     \--ghes-api-url GHES-API-URL \--aws-bucket-name "AWS-BUCKET-NAME" |
+    questions_and_answers:
+      - question: |
+          What command do I use to migrate a single repository?
+        answer: |
+          The command you use to migrate a single repository is gh gei migrate-repo. The flags you must use for this command
+          depends on the GitHub Enterprise Server version and what blob storage you are using.
+      - question: |
+          What flags do I need to use to migrate a single repository from GitHub Enterprise Server 3.8?
+        answer: |
+          The flags you need to use to migrate a single repository from GitHub Enterprise Server 3.8 are: --github-source-org SOURCE \
+          --source-repo CURRENT-NAME \--github-target-org DESTINATION \--target-repo NEW-NAME \--ghes-api-url GHES-API-URL.
+      - question: |
+          What flags do I need to use to migrate a single repository from GitHub Enterprise Server 3.7 or earlier when using Amazon S3 as the blob storage provider?
+        answer: |
+          The flags you need to use to migrate a single repository from GitHub Enterprise Server 3.7 or earlier when using Amazon S3 as the blob storage provider are: --github-source-org SOURCE
+          --source-repo CURRENT-NAME --github-target-org DESTINATION \--target-repo NEW-NAME \--ghes-api-url GHES-API-URL \--aws-bucket-name "AWS-BUCKET-NAME".
+  - context: |
+      #### Migrate multiple repositories
+      If you're migrating from GitHub Enterprise Server 3.7 or earlier, before you run your script, you must set additional environment variables to authenticate to your blob storage provider.
+
+      * For Azure Blob Storage, set AZURE\_STORAGE\_CONNECTION\_STRING to the connection string for your Azure storage account.
+      Only connection strings using storage account access keys are supported.
+      Connection strings which use shared access signatures (SAS) are not supported.
+      For more information about storage account access keys, see Manage storage account access keys in the Azure documentation.
+
+      * For AWS S3, set the following environment variables.
+        * AWS\_ACCESS\_KEY\_ID: The access key id for your bucket
+        * AWS\_SECRET\_ACCESS\_KEY: The secret key for your bucket
+        * AWS\_REGION: The AWS region where your bucket is located
+        * AWS\_SESSION\_TOKEN: The session token, if you're using AWS temporary credentials (see Using temporary credentials with AWS resources in the AWS documentation)
+    questions_and_answers:
+      - question: |
+          What environment variables are required for AWS S3 when migrating multiple repositories
+          from GitHub Enterprise Server 3.7 or earlier?
+        answer: |
+          When migrating multiple repositories from GitHub Enterprise Server 3.7 or earlier, using AWS S3, the following
+          environment variables are required:
+          * AWS\_ACCESS\_KEY\_ID: The access key id for your bucket
+          * AWS\_SECRET\_ACCESS\_KEY: The secret key for your bucket
+          * AWS\_REGION: The AWS region where your bucket is located
+          * AWS\_SESSION\_TOKEN: The session token, if you're using AWS temporary credentials (see Using temporary credentials with AWS resources in the AWS documentation)
+      - question: |
+          Are connection strings using shared access signatures (SAS) supported when migrating multiple repositories
+          from GitHub Enterprise Server 3.7 or earlier using Azure Blob Storage?
+        answer: |
+          No, connection strings using shared access signatures (SAS) are not supported when migrating multiple repositories
+          from GitHub Enterprise Server 3.7 or earlier using Azure Blob Storage.
+      - question: |
+          When migrating multiple repositories from GitHub Enterprise Server 3.7 or earlier, how do I authenticate to my blob storage?
+        answer: |
+          When you migrate multiple repositories from GitHub Enterprise Server 3.7 or earlier, you need to set additional environment variables to authenticate
+          to your blob storage.
+  - context: |
+      **Attempt 1: GitHub Enterprise Server Export**
+      After reviewing GitHub's Enterprise Server documentation, I first attempted to use GitHub’s
+      Enterprise export command-line tool to export my Enterprise Server data. This tool is designed
+      for migrating data from one GitHub Enterprise server to another, but I hoped to import the same
+      data into GitHub Enterprise Cloud or a GitHub Team account. When you run the export, the tool generates
+      a folder with JSON files and subdirectories for each repository you exported:
+      While this contains all the repository information, there’s no easy way to import this data into
+      GitHub Enterprise Cloud. GitHub’s import API endpoint uses the repository’s git URL to pull
+      data from an external version control system and import it into GitHub. Unfortunately, this
+      method requires writing custom code to parse the Enterprise Server export data, as the format is
+      undocumented, and it’s unclear if the data contains elements that can’t be replicated in GitHub
+      Enterprise Cloud.
+      Before diving into custom code, I decided to explore GitHub’s Importer tool.
+      **Attempt 2: GitHub Importer**
+      GitHub provides an Importer tool that allows you to migrate repositories into GitHub Cloud by
+      entering a repository URL and user credentials. This method is designed for ease, but it doesn’t
+      fit well with GitHub Enterprise Server. Most Enterprise Server installations are on private
+      networks, and if they are not, they require private mode to be enabled.
+      To use the GitHub Importer tool, your Enterprise Server repositories must be publicly available
+      on the internet with read access. This requirement goes against the purpose of GitHub Enterprise
+      Server, which aims to keep your repositories private and secure, so this method was not feasible
+      for my migration.
+    questions_and_answers:
+      - question: |
+          What environment variables are required for AWS S3 when migrating multiple repositories
+          from GitHub Enterprise Server 3.7 or earlier?
+        answer: |
+          When migrating multiple repositories from GitHub Enterprise Server 3.7 or earlier, using AWS S3, the following
+          environment variables are required:
+          * AWS\_ACCESS\_KEY\_ID: The access key id for your bucket
+          * AWS\_SECRET\_ACCESS\_KEY: The secret key for your bucket
+          * AWS\_REGION: The AWS region where your bucket is located
+          * AWS\_SESSION\_TOKEN: The session token, if you're using AWS temporary credentials (see Using temporary credentials with AWS resources in the AWS documentation)
+      - question: |
+          Are connection strings using shared access signatures (SAS) supported when migrating multiple repositories
+          from GitHub Enterprise Server 3.7 or earlier using Azure Blob Storage?
+        answer: |
+          No, connection strings using shared access signatures (SAS) are not supported when migrating multiple repositories
+          from GitHub Enterprise Server 3.7 or earlier using Azure Blob Storage.
+      - question: |
+          When migrating multiple repositories from GitHub Enterprise Server 3.7 or earlier, how do I authenticate to my blob storage?
+        answer: |
+          When you migrate multiple repositories from GitHub Enterprise Server 3.7 or earlier, you need to set additional environment variables to authenticate
+          to your blob storage.
+document:
+  repo: 'https://github.com/taylorjordanNC/'
+  commit:
+  patterns:
+    - 'data_preparation/'
