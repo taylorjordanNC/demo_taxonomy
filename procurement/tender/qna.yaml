@@ -243,7 +243,7 @@ seed_examples:
           On-site support consultants require additional expertise in troubleshooting, commissioning, and maintaining hardware
           (e.g., printers, faxes, scanners) and general knowledge of data communication, alongside the competencies required for service desk consultants.
 document:
-  repo: 'https://user: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@github.com/rhai-tender-poc/taxonomy.git'
-  commit: 53a1386a6b03561c3b231f817b409a4f2e236e85
+  repo: 'https://github.com/taylorjordanNC/demo_taxonomy.git'
+  commit: cc0eb7a20b79c46f9d4080a266219ead795f2e4f
   patterns:
-    - 'docs/ContractingOrganisation.md'
+    - 'procurement/documents/Offer.md'

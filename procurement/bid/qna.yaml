@@ -215,7 +215,7 @@ seed_examples:
         answer: |
           The approval needs to be reported by a specialist signature, either manually or digitally, along with the date of approval.
 document:
-  repo: 'https://user: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@github.com/rhai-tender-poc/taxonomy.git'
-  commit: 53a1386a6b03561c3b231f817b409a4f2e236e85
+  repo: 'https://github.com/taylorjordanNC/demo_taxonomy.git'
+  commit: cc0eb7a20b79c46f9d4080a266219ead795f2e4f
   patterns:
-    - 'docs/Offer.md'
+    - 'procurement/documents/Offer.md'
