@@ -1,0 +1,249 @@
+version: 3
+domain: Consulting Procurement
+created_by: mamurak
+document_outline: |
+  The framework agreement for IT consulting services procurement by the City of Gothenburg,
+  detailing sub-areas, supplier requirements, evaluation criteria, and terms for contract implementation.
+seed_examples:
+  - context: |
+      ##### Limitation on assignment
+
+      A Supplier may be awarded in a maximum of three sub-areas of the procurement. A Supplier may be awarded for more than three sub-areas only
+      in the event that there are not enough qualified tenders in the other sub-areas. The supplier shall rank its tenders by sub-area in Appendix
+      4 Capacity, sheet Ranking of tenders.
+
+      For each sub-area B-J, if there are enough qualified tenders, it must be possible to accept a maximum of 1 tender for the suppliers who
+      have consultancy brokerage as their main activity.
+
+      Clients within the following are entitled to order from the Framework Agreement:
+
+      - City of Gothenburg
+      - The Association of Local Authorities in the Gothenburg Region and ISGR AB
+      - Greater Gothenburg Fire and Rescue Service
+      - Gryning Vård AB
+      - The Gothenburg Nursing Home Foundation, including foundations and companies
+      - Härryda municipality
+      - Kungälv Municipality
+      - Lerum Municipality and Lerum Energi
+      - Lilla Edet municipality
+      - City of Mölndal
+      - Orust municipality
+      - Stenungsund Municipality
+      - Tjörn Municipality and the municipal companies existing at any given time during the framework agreement period
+      - Öckerö municipality including companies, Öckerö Fastighets AB, Öckerö Rederi AB.
+
+      Each Client is responsible for its use of and orders from the Framework Agreement.
+
+      If a Client transfers a business to another legal entity and the need for orders from the Framework Agreement is taken over, the Client
+      also has the right to order under the Framework Agreement.
+
+      Activities that affect the agreement area can be conducted under our own management. In such cases, the Framework Agreement is to be
+      regarded as a complement to the company's own activities.
+
+      In cases where there are agreements already in force and agreements that have arisen during the contract period for the activities that
+      concern the area of the Framework Agreement, these do not cease to apply in connection with this Framework Agreement.
+    questions_and_answers:
+      - question: |
+          How many sub-areas of the procurement can a supplier be awarded?
+        answer: |
+          A supplier can only be awarded a maximum of three sub-areas of the procurement. However, if there are not enough vendors who are qualified
+          in the other sub-areas, a supplier may be awarded more than three.
+      - question: |
+          Is the Orust municipality able to order from the Framework Agreement?
+        answer: |
+          Yes, the Orust municipality is entitled to order from the Framework Agreement.
+      - question: |
+          Does this Framework Agreement nullify my previous agreement?
+        answer: |
+          If you already have an agreement in place, this Framework Agreement does not nullify the previous agreement. It still applies to your contract.
+  - context: |
+      ##### The evaluation criterion Price sub-area A and B-J
+
+      All prices must be given without decimals. Prices that are calculated up and down for other competence levels are also rounded
+      without decimals. However, the number of points awarded for a certain tender amount can be to two decimal places.
+
+      The supplier shall in Appendix 1 Prices, for each sub-area (A, B, C, D, E, F, H, I, J) only state the price per hour for
+      competence level 4 and for sub-area G - Technical support and Service Desk, the price per hour for competence level 3 shall be stated.
+
+      Based on the submitted tender price, the price for higher and lower level of competence is calculated as described in documents
+      for each sub-area (Higher and lower level prices are also stated in "Appendix 1 Prices" after the Supplier has submitted its tender
+      price for "medium" level of competence.
+
+      The sum of prices for all three (3) tiers constitutes the total tender amount and it is evaluated.
+
+      The best and worst value of the total tender amount is given for the price per each sub-area. Best value finally gives 50 points
+      as the criterion Price is worth 50% in the procurement.
+
+      IMPORTANT! A Supplier whose total bid amount is lower than "Best Value" will be awarded extra points, i.e. higher number of points
+      than 50 points. However, in the event that the total bid amount is lower than the stated best value (or higher than the worst value),
+      the number of points awarded will be 5 times less than in the case the total bid amount is within the best and worst value scale.
+      This is a difference from how the general model works. In addition to the criterion Price for all sub-areas, this also applies to the
+      criterion Margin Percentage, sub-area A-Consultant Broker.
+    questions_and_answers:
+      - question: |
+          How should the supplier state the price for each sub-area?
+        answer: |
+          The supplier should state the price per hour for sub-areas A-J for competence level 4, and for sub-area G state the price per hour
+          for competence level 3.
+      - question: |
+          How is the total tender amount calculated?
+        answer: |
+          The total tender amount is calculated as the sum of prices for all three competence level tiers.
+      - question: |
+          How is the total tender amount evaluated?
+        answer: |
+          After calculating the total tender amount, that total is evaluated by compariing it against the best and worst values
+          for each sub-area. Points are awarded based on whether the total tender amount is within the best and worst value
+          range for each sub-area.
+  - context: |
+      ##### Penalty for failure to report turnover under the Framework Agreement
+
+      Purchasing and procurement are entitled to a fine if the Supplier fails to fulfil its obligations regarding the reporting of turnover.
+      A penalty will be paid if the Supplier has not rectified accounting deficiencies within 10 days after a written reminder. A fine of SEK 3,000
+      is then paid for each week that has begun. The maximum penalty amount is SEK 15,000 for each accounting period/framework agreement.
+      Purchasing and Procurement has the right to check that the Supplier has fulfilled its obligations regarding the accounting of turnover
+      by engaging an authorized auditor appointed by Purchasing and Procurement. The auditor shall be given access to invoices and accounting
+      records relating to what is required for the control and is not in conflict with law or stock exchange rules applicable to the Supplier.
+      If the control shows that the Supplier has reported correctly, Purchasing and Procurement will be responsible for the audit cost.
+      Should the control show that there are deficiencies in the accounting, the Supplier shall bear the cost, however, a maximum of an
+      amount per occasion corresponding to half the price base amount according to the Social Insurance Code.
+      The Supplier is not entitled to use the Client's name in marketing contexts without prior written consent from the Client.
+      This also applies when the agreement has expired.
+      The Supplier undertakes to comply with the anti-discrimination legislation in force at all times. The acts currently referred to are
+      Chapter 16. Sections 8 and 9 of the Penal Code and the Discrimination Act (2008:567).
+      The supplier shall, no later than 14 days after Purchasing and Procurement so requests, normally in connection with a follow-up meeting,
+      report information and documents in accordance with Chapter 3. of the Discrimination Act. The Supplier shall also provide a declaration of
+      truth stating whether the Supplier or an employee for whom the Supplier is responsible, in the performance of the Framework Agreement, has
+      violated a penal provision or prohibition under the anti-discrimination legislation in force at any given time.
+    questions_and_answers:
+      - question: |
+          What happens if a supplier does not report turnover?
+        answer: |
+          If a supplier does not report turnover, and does not rectify accounting deficiencies within 10 days after a written reminder is provided,
+          they are required to pay SEK 3,000 for each week. The maximum total penalty amount is SEK 15,000
+          for each accounting period or framework agreement.
+      - question: |
+          Can the supplier use the client's name in marketing?
+        answer: |
+          Unless the client has provided written consent, and the agreement has not expired, then the supplier
+          is not allowed to use the client's name in any marketing.
+      - question: |
+          Can the supplier be audited to check whether or not it has reported turnover properly?
+        answer: |
+          Yes, Purchasing and Procurement has the right to audiet and check that the Supplier has correctly
+          reported turnover. If the supplier has reported correctly, then Purchasing and Procurement will be
+          responsible for the cost of the audit.
+  - context: |
+      ### 5.2. Criteria for awarding contracts (evaluation criteria)
+      Tender prices are ceiling prices for the most advanced consultant role in the sub-area and within each competence level 3-5
+      as described in the procurement document. In the case of call-offs during the framework agreement period, these tender prices or
+      lower tender prices must be applicable.
+      In its tender, the supplier must specify the maximum price competence level 4 for the most advanced consultant role in the sub-area.
+
+      Based on the submitted maximum bid price at competence level 4, the Supplier's maximum price for the other levels is determined as follows:
+      - Competency level 5: Bid price for competency level 4 plus (+) 40% of that price.
+      - Competency level 3: Bid price for competency level 4 minus (-) 29% of that price.
+
+      NB! In the case of call-offs during the framework agreement period where a higher price than the maximum price for competence level 5
+      has been quoted, the requirements apply:
+
+      - The right price (level 6) must be approved in writing by the Client
+      - Every six months, the supplier must report statistics on call-offs where these prices (level 6) have been applied.
+
+      References must be stated in accordance with Appendix 2A References Consulting competence. References shall be provided for the
+      consultant roles and skill levels set out in the Annex.
+
+      Two references refer to resources and one refers to project assignments.
+
+      The Supplier shall send the completed attachment with the tender only the information that is to be answered by the Supplier.
+      Consultants to whom references refer must be included in the tender when submitting the tender, i.e. be employed by the Supplier
+      or a contracted subcontractor.
+
+      During the evaluation process, Purchasing and Procurement will email, by the supplier completed the appendix, to the specified referees
+      with a request that these be answered within the specified time. Answers are only accepted by email and attached to a completed attachment.
+
+      The final grade is the average score of all responses from referees. In case of no answer, 0 points are obtained.
+    questions_and_answers:
+      - question: |
+          What happens if a call-off occurs during a framework agreement period where a higher price than the
+          maximum price for competence level 5 has been quoted?
+        answer: |
+          If there is a call-off during a framework agreement period and a higher price than the maximum price for competence level 5
+          has been quoted, then the price must be approved in writing by the client, and the supplier needs to report statistics on the call-offs every six months.
+      - question: |
+          How will the referees providing supplier references be contactedduring the evaluation process?
+        answer: |
+          During the evaluation process, the referees providing references for the supplier will be emailed by Purchasing
+          and Procurement with a request that these emails be answered within a specified time.
+      - question: |
+          How is the final grade for the references calculated?
+        answer: |
+          The final grade for the references for the supplier is an average score of all responses from referees. For instance,
+          if no answer is received by any referee, then 0 points are obtained.
+  - context: |
+      ### 10.1 Description of the site
+      The area concerns user support, system administration, maintenance, repair and documentation. Includes support and technical support
+      directly to users. In the first instance, tenders that can offer all two roles and all described positions within roles will be accepted.
+      However, Suppliers who are specialists and with their own staff perform the service within one or more of the specified services must also
+      be able to submit tenders and be evaluated. In order to cover all specified services in the best possible way, contracting authorities shall
+      also be able to accept tenders from the Supplier, who is a specialist in one of the specified services.
+
+      Used to working in the service desk, help desk. General competency on the most frequent OS, and hardware devices. Expertise in the following positions:
+
+      - basic e-skills
+      - General knowledge of incident and problem access
+      - email (lotus notes, Outlook)
+      - General competence of the Department of Computer Communications
+      - Work with case management systems
+      - User support via phone, e-mail
+      - system administration
+      - documentation.
+
+      Used to working with direct customer contact, on-site support. General competency on the most frequent OS, and hardware devices. Expertise in:
+
+      - basic e-skills
+      - General knowledge of incident and problem access
+      - Email (Lotus Notes, Outlook)
+      - Troubleshooting, commissioning, and maintenance of hardware (printers, faxes, clients, scanners)
+      - general competence regarding data communication
+      - Work with case management systems
+      - documentation.
+
+      Consultant with knowledge and experience in the field of Identity, Access and Security. For example, in areas
+
+      - Microsoft MIM/FIM, NetIQ IDM
+      - AD, ADFS, Azure, Office 365
+      - Powershell
+      - Federation via SAML
+      - 2FA,MFA,OATH/OATH2, OTP
+
+      Technician with knowledge in planning, designing, implementing and operating MDM/EMM systems, as well as a good understanding of
+      mobile endpoint security. For example, knowledge and experience in areas:
+
+      - MDM/EMM systems (Example, Microsoft Intune, MobileIron, VmWare Airwatch)
+      - Infrastructure of MDM/EMM environment
+      - IOS & Android (installation, upgrade, support)
+      - Zero-touch installation of mobile devices, bulk installation of apps.
+      - Basic knowledge of AD, PKI, Networking.
+    questions_and_answers:
+      - question: |
+          Can suppliers who specialize in only one service submit a tender?
+        answer: |
+          Yes, the contracting organization can accept tenders from suppliers who are specialists in one
+          of the specified services.
+      - question: |
+          What specific skills or experience should our service desk consultants have in order to best qualify?
+        answer: |
+          Service desk consultants should have skills in basic e-skills, incident and problem management, email,
+          Department of Computer Communications, case management systems, and conducting user support via phone or email,
+          system administration and documentation.
+      - question: |
+          What differentiates the requirements for on-site support consultants from service desk consultants?
+        answer: |
+          On-site support consultants require additional expertise in troubleshooting, commissioning, and maintaining hardware
+          (e.g., printers, faxes, scanners) and general knowledge of data communication, alongside the competencies required for service desk consultants.
+document:
+  repo: 'https://user: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@github.com/rhai-tender-poc/taxonomy.git'
+  commit: 53a1386a6b03561c3b231f817b409a4f2e236e85
+  patterns:
+    - 'docs/ContractingOrganisation.md'

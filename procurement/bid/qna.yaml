@@ -1,0 +1,221 @@
+version: 3
+domain: Consulting Procurement
+created_by: mamurak
+document_outline: |
+  A procurement framework agreement for environmental and sustainability consulting services for the City of Gothenburg.
+seed_examples:
+  - context: |
+      Reference assignments must prove that the consultant has experience of assignments corresponding to those that may be ordered
+      from the framework agreement. The consultant must below state 2 reference assignments regarding the consultant with the following content:
+      Client's organisation The client's contact person, name, telephone number and e-mail. the time of implementation of the reference assignment
+      and when it is delivered; The assignments must be delivered and approved by the client. The assignments must not be older than 3 years from
+      the last bid date (i.e. it must have been delivered and approved within 3 years from the last bid date). A description of the Consultant's part
+      in the assignment, scope and included elements Each reference must substantiate the experience requirement. The specified referees will be
+      contacted by e-mail there, in the e-mail the description of the reference assignment will be attached, which must be approved and signed by
+      the specified referee. The Referee must confirm that the assignment is in accordance with the description. Reference assignments that do not
+      relate to Management and Governance will not be approved. Referees have 7 days to submit a response via email to Purchasing and Procurement.
+      Certificates of reference will be sent out during week 11 or week 12 2022. If the referee cannot confirm that the description corresponds to the
+      assignment, the reference assignment will not be approved. If any of the referees submit a response after 7 days from the date of mailing,
+      the requirement for a reference assignment is not met. Purchasing and procurement will be reminded a maximum of once. It is of the utmost
+      importance that the correct e-mail address is provided and that the referees are spoken to and have the opportunity to respond during the
+      response period. Reference assignments cannot be replaced. The consultant is responsible for ensuring that the contact person for the assignment
+      is spoken to and can be reached by e-mail/phone number. The contact person must have knowledge of how the assignment has been carried out in their
+      operations and be able to confirm that the assignment has been carried out as stated in the description. Reference assignments within the company's
+      own organization are not accepted and the reference assignments must relate to different clients. A client refers to an administration, a company
+      or a company. Purchasing and Procurement reserves the right to assess whether the stated reference assignment is equivalent or not.
+      A consultant who cannot specify reference assignments as described above, for example because the business is newly started, must be able to
+      demonstrate in some other way that the requirement is met, for example by persons in a managerial position having experience of corresponding
+      assignments acquired in previous employment or operations. However, the assignments must not be older than three years from the last day of tendering.
+    questions_and_answers:
+      - question: |
+          What details must each reference assignment include?
+        answer: |
+          Each of the two reference assignments must include the client’s organization and contact person (name, phone number, and email),
+          the time of implementation and delivery of the assignment, and the description of the consultant's role,
+          scope, and included elements in the assignment.
+      - question: |
+          How many reference assignments must be provided?
+        answer: |
+          The consultant must provide two reference assignments.
+      - question: |
+          What happens if a referee does not respond within 7 days from the date of mailing?
+        answer: |
+          If the referee does not respond within seven days from the date of mailing, the reference assignment is not met.
+  - context: |
+      The client has the right to cancel parts of the assignment that have not been completed. In the event of cancellation, the consultant
+      is entitled to compensation for work performed, costs incurred and reasonable costs for liquidation that are not compensated in any other way.
+      The consultant is not entitled to compensation for loss of profit in the event of cancellation of assignments. If the cancellation is due
+      to a decision by the authorities over which the client could not have controlled, the consultant is entitled to compensation for work performed,
+      costs incurred and reasonable costs for discontinuation that are not reimbursed in any other way. The same applies if the conditions for
+      the completion of the assignment, beyond the client's control, have changed to a significant extent and it is not reasonable to complete
+      the assignment in view of this. Regardless of whether cancellation and/or cancellation takes place, the client is entitled to compensation
+      for the direct damage caused by the defect. In the event of cancellation, the result of the work performed must be reported and handed over
+      to the client no later than when the client has fulfilled its payment obligation. After handover, the results of the assignment may be used
+      in the same way as if the assignment had been completed. If the client wishes to claim that the assignment has been carried out incorrectly,
+      the client must notify the consultant within a reasonable time from the time the error is established. In cases where an investigation of
+      suspicion that one or more of the circumstances listed above exist, the client has the right to temporarily remove the availability
+      (so-called local temporary order suspension) for the consultant's framework agreement. The disputed circumstance that led to the order
+      freeze does not require that a dispute has been finally settled. Throughout the time the disputed issue is subject to investigation and
+      consideration, the client thus has the opportunity to use a local temporary order freeze. The consultant is not entitled to compensation
+      for loss of income or other costs due to temporary order suspension. In the event of early termination, the consultant is entitled to
+      reasonable remuneration for the services provided by the consultant up to the date of termination of the framework agreement, but no right
+      to receive any other remuneration due to the termination of the framework agreement.
+    questions_and_answers:
+      - question: |
+          Can the client cancel parts of the assignment?
+        answer: |
+          Yes, the client has the right to cancel parts of the assignment that have not been completed.
+      - question: |
+          What compensation is the consultant entitled to if the client cancels the assignment?
+        answer: |
+          If the client cancels, the consultant is entitled to compensation for work performed, reimbursement of costs incurred, and reasonable costs for liquidation
+          or discontinuation that are not compensated in any other way.
+      - question: |
+          What should the client do if they think the assignment was carried out incorrectly?
+        answer: |
+          If the client believes the assignment was done incorrectly, the client must tell the consultant in a reasonable time frame from the time the error
+          was established. 
+  - context: |
+      "## **AUB.2 Procurement document AUB.21 Electronic tendering\t![][image18]**\n\nTenders must be submitted electronically via TendSign,
+      which means that tenders cannot be submitted in paper format, by fax or e-mail. In order to submit tenders, an authorised person for the
+      consultant must register a user account on [www.tendsign.com](http://www.tendsign.com/).\n\nThe email address used by the consultant to log
+      in to the system is the one that applies to all communication regarding the procurement. The consultant's contact person is specified in
+      TendSign.\n\nTechnical questions about the system should be directed to TendSign support by email tendsignsupp.com. Manual, instructional
+      video and frequently asked questions and answers can be found at TendSign support. TendSign support is open weekdays 07.00-17.00.\n\nProcurement
+      questions are only answered by the procurement manager."
+    questions_and_answers:
+      - question: |
+          Can I submit a tender by fax?
+        answer: |
+          No, you cannot submit a tender by fax. All tenders must be submitted electronically via TendSign.
+          You may not submit a tender by fax, paper format, or email.
+      - question: |
+          How can I submit a tender?
+        answer: |
+          You can submit a tender electronically via TendSign. To do so, an authorized person for the consultant must register a user account on www.tendsign.com.
+      - question: |
+          How can I get help with the TendSign system?
+        answer: |
+          To get help with technical questions about the system you must use TendSign support by emailing tendsignsupp.com. Manual, instructional video and
+          frequently asked questions can be found at TendSign support as well.
+  - context: >-
+      ## **AUC.72 Ownership of original documents and data files**
+
+
+      **ABK 09, Chapter 7, Sections 1,3,5,7 and 8 are deleted in their entirety
+      and replaced with the following.**
+
+
+      The client obtains ownership of all materials and all work results that
+      emerge from the execution of the assignment. This means, among other
+      things, that the client is free to utilise, change, publish and further
+      develop the achieved work results and transfer the work results to others.
+      The right is unlimited and free of charge. Material provided by the client
+      remains the property of the client and may not be used by the consultant
+      for anything other than what has been agreed, without the client's written
+      consent. This also applies to investigation material or work results to
+      which the client has been given ownership or disposal. Such material must
+      be handed over to the client when the material is not needed or at the
+      latest at the end of the assignment.
+
+      Technical documentation such as computer programs, documentation,
+      development tools, program code and the like, or methods that are not
+      attributable to the performance of the assignment and where the rights are
+      owned by the consultant or a third party, remain the property of the
+      consultant or a third party.
+
+      The Consultant is responsible for ensuring that the services provided or
+      materials and results, when used in accordance with the Framework
+      Agreement, do not infringe third parties' rights to patents, copyrights or
+      other intellectual property rights.
+
+      In the event of a claim of infringement of intellectual property rights,
+      the client must notify the consultant of the infringement. The consultant
+      shall, at his own expense, take over the dispute and speak on behalf of
+      the client. The consultant shall also, at its own expense, ensure the
+      client the right to continue to use the result or replace the disputed
+      part of the result with a part corresponding to the exchanged one. If
+      continued use of the result can take place during an ongoing dispute, the
+      consultant must provide security for the loss that the client may incur as
+      a result of alleged infringement. In addition to compensation for amounts
+      that the client has been forced to pay to a third party, the client is
+      entitled to compensation for all other losses that arise as a result of
+      the infringement.
+    questions_and_answers:
+      - question: |
+          Can the client publish the work results?
+        answer: |
+          Yes, the client is free to publish, use, alter and further
+          develop the achieved work results and transfer the work to others.
+      - question: |
+          What materials are not owned by the client?
+        answer: |
+          Any technical documentation like documentation, computer programs, development tools, etc. or any methods that are
+          not atrributed to the performance of the assignment and where rights are owned by the consultant,
+          are the property of the consultant and does not have to be handed back to the client.
+      - question: |
+          Who is responsible for costs associated with the infringement of intellectual property?
+        answer: |
+          If there is a claim of infringement of intellectual property rights, the consulant must take over the dispute and speak on behalf of
+          the client and ensure the client the right to continue to use the result or replace the disputed
+          part of the result with a part corresponding to the exchanged one.
+  - context: |
+      ## **AUC.22 Quality and environmental management**
+
+      If the client so requests, the following requirements for quality control of documents prior to delivery apply.
+
+      **Quality control of documents prior to delivery**
+
+      Prepared documents, such as reports, analyses, investigations, procurement documents, construction documents and the like,
+      must be reviewed and approved by the project manager or a person with equivalent responsibility before delivery.
+
+      This approval must be reported by the specialist's signing, manually or digitally, of the prepared material, as well as
+      dating when the approval was made.  The approval signature can be submitted on a separate document, which must then contain a
+      list of the documents to which the approval relates. If the document has been prepared by a specialist, the examination must be
+      carried out by another specialist. If the consulting company has only offered one specialist, a special agreement must be made
+      with the client at the time of ordering regarding how this quality control is to be carried out.
+
+      The consultant's quality plan must report on how specialist review is to take place. If an approval signature of a specialist
+      is missing when documents are delivered, these may be sent back to the consultant without further processing by the client
+      until such approval is handed over from the consultant.
+
+      In the event of a failure to provide an approval signature upon delivery, the client has the right to withhold payment for
+      the work to which the delivery relates until such signature is submitted.
+
+      **AUC.2211 Client's quality manager**
+
+      The client's quality manager is specified when ordering.
+
+      **AUC.2212 Consultant's Quality Officer**
+
+      When ordering, the consultant must state who is responsible for quality for the assignment.
+
+      **AUC.2221 Client's environmental manager**
+
+      The client's environmental manager is specified when ordering.
+
+      **AUC.2222 Consultant's Environmental Officer**
+
+      When ordering, the consultant must state who is responsible for the environment.
+    questions_and_answers:
+      - question: |
+          Can the client withhold payment if an approval signature is not provided?
+        answer: |
+          Yes, if the approval signature is not provided, and the client has requested quality control of documents prior to delivery,
+          then the client has the right to withold payment for the work
+          related to the delivery until the approval signature is submitted.
+      - question: |
+          What documents are subject to quality control before delivery?
+        answer: |
+          If the client requests quality control of documents prior to delivery, then documents such as reports
+          analyses, investigations, procurement documents, construction documents, and similar materials must be reviewed
+          and approved by a project manager or someone with similar responsibilities.
+      - question: |
+          How is the approval of prepared documents reported?
+        answer: |
+          The approval needs to be reported by a specialist signature, either manually or digitally, along with the date of approval.
+document:
+  repo: 'https://user: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@github.com/rhai-tender-poc/taxonomy.git'
+  commit: 53a1386a6b03561c3b231f817b409a4f2e236e85
+  patterns:
+    - 'docs/Offer.md'
